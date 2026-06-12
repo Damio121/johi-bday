@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #87ceeb, #ffe4e1);
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 4rem;
+        color: #ff1493;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: 1;
+        text-align: center;
+    }
+
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: -10px;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(720deg);
+        }
+    }
+</style>
+</head>
 <body>
 
-<div style="text-align: center;">
+<h1> Všechno nejlepší Táňo! </h1>
 
-<p> </p>
-<img src="love_u.png">
-</div>
+<script>
+function createConfetti() {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+
+    const colors = [
+        "#ff0000", "#00ff00", "#0000ff",
+        "#ffff00", "#ff00ff", "#00ffff",
+        "#ff8800", "#8800ff"
+    ];
+
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+    const size = Math.random() * 10 + 5;
+    confetti.style.width = size + "px";
+    confetti.style.height = size + "px";
+
+    const duration = Math.random() * 3 + 3;
+    confetti.style.animationDuration = duration + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.remove();
+    }, duration * 1000);
+}
+
+setInterval(createConfetti, 100);
+</script>
 
 </body>
 </html>
