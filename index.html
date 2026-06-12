@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vše nejlepší!!!</title>
+<title> <3 </title>
 
 <style>
     body {
@@ -25,56 +25,12 @@
         text-align: center;
     }
 
-    .confetti {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: -10px;
-        animation: fall linear forwards;
-    }
-
-    @keyframes fall {
-        to {
-            transform: translateY(110vh) rotate(720deg);
-        }
-    }
 </style>
 </head>
 <body>
 
-<h1> Všechno nejlepší k svátku Táňo! 🌷</h1>
+<img src="love_u.png" alt="napis" />
 
-<script>
-function createConfetti() {
-    const confetti = document.createElement("div");
-    confetti.classList.add("confetti");
-
-    const colors = [
-        "#ff0000", "#00ff00", "#0000ff",
-        "#ffff00", "#ff00ff", "#00ffff",
-        "#ff8800", "#8800ff"
-    ];
-
-    confetti.style.left = Math.random() * window.innerWidth + "px";
-    confetti.style.backgroundColor =
-        colors[Math.floor(Math.random() * colors.length)];
-
-    const size = Math.random() * 10 + 5;
-    confetti.style.width = size + "px";
-    confetti.style.height = size + "px";
-
-    const duration = Math.random() * 3 + 3;
-    confetti.style.animationDuration = duration + "s";
-
-    document.body.appendChild(confetti);
-
-    setTimeout(() => {
-        confetti.remove();
-    }, duration * 1000);
-}
-
-setInterval(createConfetti, 100);
-</script>
 
 </body>
 </html>
